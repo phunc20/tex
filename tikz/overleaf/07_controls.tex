@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+	\draw (0,0) rectangle (4,4);
+	\draw (0,0) .. controls (0,4) and (4,0) .. (4,4);
+	% Here, (0,4) and (4,0) are the control pts;
+	% control pts are like magnet, attracting the curve
+	% in their direction.
+\end{tikzpicture}
+\end{document}
