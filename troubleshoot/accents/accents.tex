@@ -1,4 +1,12 @@
 \documentclass{article}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan,
+}
+
 \begin{document}
 
 \begin{itemize}
@@ -18,11 +26,35 @@
   %\item \texttt{\backslashchar A} gives \`A
 
   %% Succeeded
-  \item \texttt{\textbackslash `A} gives \`A
-  \item \texttt{\textbackslash 'A} gives \'A
-  \item \texttt{\textbackslash \^{}A} gives \^A
+  %\item \texttt{\textbackslash `A} gives \`A
+  %\item \texttt{\textbackslash 'A} gives \'A
+  %\item \texttt{\textbackslash \^{}A} gives \^A
 
+  %% verbatim: As you can observe, surround the
+  %% content of the verbatim right after \verb
+  %% by any non-alphabet char will make it work.
+  \item \verb$\`A$ gives \`A, where \verb|`| is the key to the left of \texttt{1} on American English keyboard
+  \item \verb#\'A# gives \'A, where \verb3'3 is \textbf{single quote}
+  \item \verb#\^A# gives \^A
+  %\item \texttt{\textbackslash \^{}A} gives \^A
 
 \end{itemize}
+
+\noindent
+H\^otel, na\"ive, \'el\`eve,\\
+sm\o rrebr\o d, !`Se\~norita,\\
+Sch\"onbrunner Schlo\ss Stra\ss e
+
+
+\noindent
+\href{https://tex.stackexchange.com/questions/8857/how-to-type-special-accented-letters-in-latex}{https://tex.stackexchange.com/questions/8857/how-to-type-special-accented-letters-in-latex}
+
+
+\noindent
+H\^ otel, na\" ive, \' el\` eve,\\
+sm\o rrebr\o{}d, !` Se\~ norita,\\
+Sch\" onbrunner Schlo\ss{} Stra\ss e
+
+
 
 \end{document}
