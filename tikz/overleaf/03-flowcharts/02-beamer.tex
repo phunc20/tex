@@ -1,0 +1,72 @@
+\documentclass{beamer}
+\usecolortheme{owl}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+
+\begin{document}
+
+\tikzstyle{startend} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,
+                         text centered, draw=green, very thick, fill=red!30]
+\tikzstyle{io} = [trapezium,
+                  trapezium left angle=70,
+                  trapezium right angle=110,
+                  minimum width=3cm,
+                  minimum height=1cm,
+                  text centered,
+                  very thick,
+                  draw=white,
+                  fill=blue!30
+]
+\tikzstyle{process} = [rectangle,
+                       minimum width=3cm,
+                       minimum height=1cm,
+                       text centered,
+                       text width=3cm,
+                       very thick,
+                       draw=white,
+                       fill=orange!30
+]
+\tikzstyle{decision} = [diamond,
+                        minimum width=3cm,
+                        minimum height=1cm,
+                        text centered,
+                        very thick,
+                        draw=white,
+                        fill=green!30
+]
+
+\tikzstyle{arrow} = [thick,
+                     ->,
+                     color=white,
+                     >=stealth,
+]
+
+
+
+\begin{frame}
+  \begin{tikzpicture}[node distance=2cm]
+    % label for future ref.
+    % what   label     style                                      displayed_text
+    \node    (start)   [startend]                                 {Anfang};
+    \node    (in)      [io, below of=start]                       {Eingabe};
+    \node    (proc1)   [process, below of=in]                     {Prozess 1};
+    \node    (dec1)    [decision, right of=proc1, xshift=2cm]     {Entscheidung};
+    \node    (proc2b)  [process, above of=dec1, yshift=1cm]       {Prozess 2b: wortreich, wortreich, wortreich};
+    \node    (proc2a)  [process, right of=dec1, xshift=2cm]       {Prozess 2a};
+    \node    (out)     [io, above of=proc2a]                      {Ausgabe};
+    \node    (end)    [startend, above of=out]                    {Zweck};
+
+    % what   style     start_pt   end_pt
+    \draw    [arrow]   (start) -- (in);
+    \draw    [arrow]   (in) -- (proc1);
+    \draw    [arrow]   (proc1) -- (dec1);
+    \draw    [arrow]   (dec1) -- node[anchor=south] {Ja} (proc2a);
+    \draw    [arrow]   (dec1) -- node[anchor=west] {Nein} (proc2b);
+    \draw    [arrow]   (proc2b) -- (proc1);
+    \draw    [arrow]   (proc2a) -- (out);
+    \draw    [arrow]   (out) -- (end);
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}

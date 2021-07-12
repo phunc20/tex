@@ -3,3 +3,8 @@
 #*.pdf
 *.toc
 *.out
+*.nav
+*.snm
+
+trash.*
+corbeille/
