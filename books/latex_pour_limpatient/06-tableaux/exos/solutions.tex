@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{multirow}  % in order to use \multirow; \mulitcolumn is available by default
+
+
+\begin{document}
+% 6.1 Laisser une case vide en haut et à gauche d'un tableau
+\begin{tabular}{|l|c|c|}
+  % You might wonder why we need to use \multicolumn
+  % in the 1st row. Let's find that out.
+  \cline{2-3} {} & Paris & Oslo \\
+  \hline
+  Rome & 1447 Km & 2565 km \\
+  \hline
+  Prague & 1061 Km & 1202 km \\
+  \hline
+\end{tabular}
+
+\vspace{3cm}
+\begin{tabular}{|l|c|c|}
+  \cline{2-3} \multicolumn{1}{l|}{} & Paris & Oslo \\
+  \hline
+  Rome & 1447 Km & 2565 km \\
+  \hline
+  Prague & 1061 Km & 1202 km \\
+  \hline
+\end{tabular}
+
+
+% 6.2 Changer l'alignement d'une seule cellule
+\vspace{3cm}
+\begin{tabular}{|l|r|}
+  \hline
+  %\multicolumn{2}{c|c}{Pays & Monnaie} \\  % This won't work.
+  \multicolumn{1}{|c|}{Pays} & \multicolumn{1}{c|}{Monnaie} \\
+  \hline
+  Japon & Yen \\
+  Russie & Rouble \\
+  Zimbabwe & Dollar zimbabwéen \\
+  \hline
+\end{tabular}
+
+
+% 6.3 Combiner lignes et colonnes multiples
+\vspace{3cm}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  1 & 2 & 3 & 4 \\
+  \hline
+  12 & \multicolumn{2}{c|}{\multirow{2}*{2007}} & 5 \\
+  \cline{1-1} \cline{4-4}
+  %11 & & & 6 \\  % This will be wrong.
+  11 & \multicolumn{2}{c|}{} & 6 \\
+  \hline
+  10 & 9 & 8 & 7 \\
+  \hline
+\end{tabular}
+
+
+
+\end{document}
