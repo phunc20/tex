@@ -1,0 +1,55 @@
+\documentclass[dvips]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+
+% choix du theme
+\usetheme{Warsaw}
+\mode<presentation>
+% supprime les symboles de navigation
+\setbeamertemplate{navigation symbols}{}
+% fait apparaitre en grise les animations
+\setbeamercovered{transparent}
+
+\title{Mon titre}
+\author{L'auteur}
+\begin{document}
+
+\begin{frame}
+  % Equivalent de \maketitle
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Table des matières}
+  \tableofcontents
+\end{frame}
+
+\section{Première partie}
+\begin{frame}
+  \frametitle{Le titre du premier transparent}
+  \framesubtitle{Eventuellement un sous-titre}
+
+  Et du contenu, que l'on peut
+  \alert{souligner}.
+  \uncover<2-3>{Ceci n'est révélé que
+  dans les deux derniers affichages.}
+
+  \begin{itemize}
+    \item<1-> J'apparais en premier;
+    \item<2-> moi en deuxième;
+    \item<3-> et moi en dernier;
+  \end{itemize}
+
+  \begin{block}{Attention}
+    Du texte mis en évidence
+  \end{block}
+\end{frame}
+
+\section{Seconde partie}
+\begin{frame}
+  \frametitle{Le nouveau titire}
+  Et du contenu...
+\end{frame}
+
+\end{document}
