@@ -1,7 +1,7 @@
 
-| What you get | What you see |
-| :----------: | :----------: |
-| $\therefore$ | `$\therefore$` |
+| What you get | What you see | Package |
+| :----------: | :----------: | :----------: |
+| $\therefore$ | `$\therefore$` | `amssymb` |
 
 
 
