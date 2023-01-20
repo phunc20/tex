@@ -1,6 +1,6 @@
 
 
-- $\therefore$: `$\therefore$`
+- $\therefore$ `$\therefore$`
 
 
 
