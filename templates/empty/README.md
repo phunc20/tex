@@ -18,5 +18,9 @@
   - You might encounter error messages saying sth like **`vietnam.sty not found`**, a error that you may
     overcome, if you are using Arch Linux, by `pacman -S texlive-langextra`. Other Linux distros probably
     could solve similarly by installing the corresponding package with a similar name.
+    ```bash
+    # e.g. Fedora
+    sudo dnf install "tex(vietnam.sty)"
+    ```
 
 

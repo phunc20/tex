@@ -1,0 +1,106 @@
+\documentclass{article}
+%\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{ctex}
+\usepackage{CJKutf8}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\pgfplotsset{compat=1.17}
+
+\begin{document}
+\section{Current way of doing}
+
+\begin{CJK}{UTF8}{min}
+\begin{tikzpicture}[
+  bbox/.style={
+      rectangle,
+      draw=red!60,
+      fill=red!5,
+      very thick,
+      minimum size=10mm,
+    },
+  quan_dist/.style={
+      thick,
+      orange!80!black,
+    },
+  an_dist/.style={
+      very thick,
+      green!90!black,
+      opacity=0.6,
+    },
+  ]
+  %\draw[blue, very thick] (30,80) rectangle (43,95);
+  %\node [bbox] at (7cm,8cm) {$\texttt{組版を実証item\_name1}$};
+  %\draw [dashed] (0, 0) -- (0, 1.024);
+  %\draw [dashed] (0.010, 0) -- (0.010, 1.024);
+  %\draw [dashed] (0pt, 0pt) -- (0pt, 10.24pt);
+  %\draw [dashed] (10pt, 0pt) -- (10pt, 10.24pt);
+
+  % Draw invoice borders and Quan's dashed lines
+  \def\h{200}
+  \def\w{180}
+  %\draw (0pt, 0pt) -- (0pt, \h pt) -- (\w pt, \h pt)
+  %   -- (\w pt, 0pt) -- (0pt, 0pt);
+  \draw (0pt, \h pt) -- (\w pt, \h pt)
+     -- (\w pt, 0pt) -- (0pt, 0pt);
+
+  \def\wa{0}
+  \def\wb{0.15*\w}
+
+  \draw [dashed] (0pt, 0pt) -- (0pt, \h pt);
+  \draw [dashed] (\wb pt, 0pt) -- (\wb pt, \h pt);
+  \filldraw (\wa pt, \h pt) node [anchor=south] {$(0, 0)$} circle [radius=2pt];
+  \filldraw (\wb pt, \h pt) node [anchor=south west] {$(10,0)$} circle [radius=2pt];
+
+  % draw bboxes and their imaginary coord.
+  \def\xa{0.4*\w}
+  \def\ya{0.8*\h}
+  \def\xb{0.7*\w}
+  \def\yb{0.7*\h}
+  \filldraw [dotted] (\xa pt, \ya pt) node [anchor=west, fill=yellow!80!black] {ざる蕎麦}
+    -- (\wa pt, \ya pt) circle [radius=2pt];
+  \filldraw [dotted] (\xb pt, \yb pt) node [anchor=west, fill=blue!50!white] {1,300 円}
+    -- (\wb pt, \yb pt) circle [radius=2pt];
+
+
+  \def\xc{\xa}
+  \def\yc{0.65*\h}
+  \def\xd{\xb}
+  \def\yd{0.58*\h}
+  \filldraw [dotted] (\xc pt, \yc pt) node [anchor=west, fill=yellow!80!black] {玉子焼き}
+    -- (\wa pt, \yc pt) circle [radius=2pt];
+  \filldraw [dotted] (\xd pt, \yd pt) node [anchor=west, fill=blue!50!white] {1,000 円}
+    -- (\wb pt, \yd pt) circle [radius=2pt];
+
+  \draw [quan_dist] (\wa pt, \ya pt) -- (\wb pt, \yb pt);
+  \draw [quan_dist] (\wa pt, \yc pt) -- (\wb pt, \yd pt);
+  \draw [an_dist] (\wb pt, \ya pt) -- (\wb pt, \yb pt);
+  \draw [an_dist] (\wb pt, \yc pt) -- (\wb pt, \yd pt);
+
+
+  \def\delta{0.12*\w}
+  \def\xe{\xa + \delta}
+  \def\ye{0.45*\h}
+  \def\xf{\xb}
+  \def\yf{0.35*\h}
+  \filldraw [dotted] (\xe pt, \ye pt) node [fill=yellow!80!black]
+                                       {味噌煮込みうどん}
+    -- (\wa pt, \ye pt) circle [radius=2pt];
+  \filldraw [dotted] (\xf pt, \yf pt) node [fill=blue!50!white]
+                                       {900 円}
+    -- (\wb pt, \yf pt) circle [radius=2pt];
+
+  \draw [quan_dist] (\wa pt, \ye pt) -- (\wb pt, \yf pt);
+  \draw [an_dist] (\wb pt, \ye pt) -- (\wb pt, \yf pt);
+
+
+  \filldraw [orange, opacity=0.9] (\xc pt, \yc pt) circle [radius=2pt] -- (\xd pt, \yd pt) circle [radius=2pt];
+  \filldraw [orange, opacity=0.9] (\xe pt, \ye pt) circle [radius=2pt] -- (\xd pt, \yd pt) circle [radius=2pt];
+
+
+  %\node [bbox] at (7cm,8cm) {組版を実証};
+  %\node [bbox] at (10cm,20cm) {Differential Calculus};
+  %\filldraw [red!60] (7cm,8cm) circle [radius=2pt];
+\end{tikzpicture}
+\end{CJK}
+\end{document}

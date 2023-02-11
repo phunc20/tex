@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{listings}
+
+\begin{document}
+\begin{lstlisting}[
+  basicstyle=\small\ttfamily,
+]
+  \textbackslash{}begin{tikzpicture}
+    \textbackslash{}draw (-1.5,0) -- (1.5,0);
+    \textbackslash{}draw (0,-1.5) -- (0,1.5);
+    \textbackslash{}draw (-1,0) .. controls (-1,1) and (1,1) .. (0,1)
+                    controls (1,1) and (1,1) .. (1,0);
+  \textbackslash{}end{tikzpicture}
+\end{lstlisting}
+
+\vspace{1em}
+\begin{tikzpicture}
+  \draw (-1.5,0) -- (1.5,0);
+  \draw (0,-1.5) -- (0,1.5);
+  \draw (-1,0) .. controls (-1,1) and (1,1) .. (0,1)
+               .. controls (1,1) and (1,1) .. (1,0);
+\end{tikzpicture}
+
+%\noindent \rule{\pagewidth}
+
+\begin{lstlisting}[
+  basicstyle=\small\ttfamily,
+]
+  \textbackslash{}begin{tikzpicture}
+    \textbackslash{}draw (-1.5,0) -- (1.5,0);
+    \textbackslash{}draw (0,-1.5) -- (0,1.5);
+    \textbackslash{}draw (-1,0) .. controls (-1,1) and (-1,1) .. (0,1)
+                    controls (1,1) and (1,1) .. (1,0);
+  \textbackslash{}end{tikzpicture}
+\end{lstlisting}
+
+\vspace{1em}
+\begin{tikzpicture}
+  \draw (-1.5,0) -- (1.5,0);
+  \draw (0,-1.5) -- (0,1.5);
+  \draw (-1,0) .. controls (-1,1) and (-1,1) .. (0,1)
+               .. controls (1,1) and (1,1) .. (1,0);
+\end{tikzpicture}
+
+
+\begin{lstlisting}[
+  basicstyle=\small\ttfamily,
+]
+  \textbackslash{}begin{tikzpicture}
+    \textbackslash{}draw (-1.5,0) -- (1.5,0);
+    \textbackslash{}draw (0,-1.5) -- (0,1.5);
+    \textbackslash{}draw (-1,0) .. controls (-1,1) and (-1,1) .. (0,1)
+                    controls (1,1) and (1,1) .. (1,0);
+  \textbackslash{}end{tikzpicture}
+\end{lstlisting}
+
+\vspace{1em}
+\begin{tikzpicture}
+  \draw (-1.5,0) -- (1.5,0);
+  \draw (0,-1.5) -- (0,1.5);
+  \draw (-1,0) .. controls (-1,0.555) and (-0.555,1) .. (0,1)
+               .. controls (0.555,1) and (1,0.555) .. (1,0);
+\end{tikzpicture}
+\end{document}
